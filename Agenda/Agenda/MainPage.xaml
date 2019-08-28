@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.MainPage"
+             Title="Agenda">
+
+    <StackLayout Margin="20">
+        <Editor Placeholder="Evento"
+                Text="{Binding Text}"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <DatePicker MinimumDate="01/01/2018"
+                        MaximumDate="12/31/2020"
+                        Date="08/26/2019" />
+
+            <TimePicker x:Name="arrivalTimePicker" Margin="0,1" 
+                        Grid.Column="1"/>
+
+        </Grid>
+
+        <Editor Placeholder="Descripción del evento"
+                Text="{Binding Text}"
+                HeightRequest="100" />
+
+        <Button Text="Agendar Evento"/>
+    </StackLayout>
+</ContentPage>
